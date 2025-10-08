@@ -11,7 +11,7 @@ export const Collections = () => {
       const formatted = data.map((product: any) => ({
         ...product,
         imageUrl: product.image?.url
-          ? `${import.meta.env.VITE_STRAPI_URL}${
+          ? `${import.meta.env.VITE_STRAPI_URL?.replace(/\/$/, "")}${
               product.image.url
             }`
           : "",
