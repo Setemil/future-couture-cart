@@ -10,11 +10,7 @@ export const Collections = () => {
     fetchProducts().then((data) => {
       const formatted = data.map((product: any) => ({
         ...product,
-        imageUrl: product.image?.url
-          ? `${import.meta.env.VITE_STRAPI_URL?.replace(/\/$/, "")}${
-              product.image.url
-            }`
-          : "",
+        imageUrl: product.image.url,
       }));
       setProducts(formatted);
     });
